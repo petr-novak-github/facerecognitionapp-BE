@@ -1,2 +1,2 @@
 # facerecognitionapp-BE
-Backend part of FaceRecognitionApp, based on tutorila form Andrei from ZtoM.
+Backend part of FaceRecognitionApp, based on tutorial form Andrei from ZtoM.
