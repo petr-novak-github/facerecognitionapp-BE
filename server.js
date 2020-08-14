@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 
 
@@ -49,15 +51,15 @@ app.get('/', (req, res) => {
 app.post('/signin', (req, res) => {
 
 // Load hash from your password DB.
- bcrypt.compare("apples", '$2a$10$XleS2vNJMBLfeo8WPncKZe7lCAiqznDwsGocpWxvbUHddzRcMgLCm', function(err, res) {
+// bcrypt.compare("apples", '$2a$10$XleS2vNJMBLfeo8WPncKZe7lCAiqznDwsGocpWxvbUHddzRcMgLCm', function(err, res) {
    //  res == true
-   console.log ('first guess', res);
-});
-bcrypt.compare("veggies", '$2a$10$XleS2vNJMBLfeo8WPncKZe7lCAiqznDwsGocpWxvbUHddzRcMgLCm', function(err, res) {
+ //  console.log ('first guess', res);
+//});
+//bcrypt.compare("veggies", '$2a$10$XleS2vNJMBLfeo8WPncKZe7lCAiqznDwsGocpWxvbUHddzRcMgLCm', function(err, res) {
     // res = false
-    console.log ('second guess', res);
+  //  console.log ('second guess', res);
 
-});
+//});
 
 
 
@@ -133,6 +135,6 @@ if (!found) {
 
 
 
-app.listen(3000, ()=>{
-    console.log('app is running on port 3000');
+app.listen(3001, ()=>{
+    console.log('app is running on port 3001');
 })
