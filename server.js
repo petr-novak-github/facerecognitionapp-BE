@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
-const { Client } = require('pg');
+//const { Client } = require('pg');
 
 
 const register = require('./controllers/register');
@@ -13,19 +13,19 @@ const image = require ('./controllers/image');
 
 
 
-//const db = knex ({
-//   client: 'pg',
-//  connection: {
-//    host : '127.0.0.1',
-//   user : 'postgres',
-//    password : 'testpeno1',
-//    database : 'smart_brain'
-//  }
-// });
+const db = knex ({
+   client: 'pg',
+ connection: {
+    host : '127.0.0.1',
+   user : 'postgres',
+    password : 'testpeno1',
+    database : 'smart_brain'
+  }
+ });
 
-//db.select('*').from('users').then(data => {console.log(data)});
+db.select('*').from('users').then(data => {console.log(data)});
 
-const client = new Client({
+/*const client = new Client({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
@@ -40,7 +40,7 @@ client.query('SELECT * FROM users;', (err, res) => {
     console.log(JSON.stringify(row));
   }
   client.end();
-});
+});*/
 
 
 const app = express();
